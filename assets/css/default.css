@@ -1,0 +1,15 @@
+/* Site Header Style */
+.site-branding .site-title {
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.main-navigation a {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: .5px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
