@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="column">
                     <div class="site-branding">
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
                     </div>
                 </div>
                 <div class="column column-75">
