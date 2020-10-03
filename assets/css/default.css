@@ -9,3 +9,14 @@
     font-weight: 700;
     line-height: 1.2;
 }
+
+/* Site Footer Style */
+.site-info {
+    color: rgba(0,0,0,.5);
+    margin: 2rem 0;
+    font-size: 15px;
+    text-align: center;
+}
+.site-info p {
+	margin-bottom: 0;
+}
