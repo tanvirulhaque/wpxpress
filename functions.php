@@ -18,6 +18,7 @@ if ( ! function_exists( 'wpxpress_setup' ) ) {
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'customize-selective-refresh-widgets' );
+	    add_theme_support( 'responsive-embeds' );
         add_theme_support(
             'html5',
             array(
@@ -92,10 +93,36 @@ function wpxpress_widgets_init() {
 
 add_action( 'widgets_init', 'wpxpress_widgets_init' );
 
+
+/**
+ * Enqueue Google Fonts
+ * @return string
+ */
+function wpxpress_google_fonts_url() {
+
+	$fonts_url = '';
+
+	$font_families = array();
+
+	$font_families[] = 'Open Sans:300,400,600,700,800';
+	$font_families[] = 'Titillium Web:400,600,700,900';
+
+	$query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin,latin-ext' ),
+	);
+
+	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+	return esc_url_raw( $fonts_url );
+}
+
+
 /**
  * Enqueue scripts and styles.
  */
 function wpxpress_scripts() {
+	wp_enqueue_style( 'google-fonts', wpxpress_google_fonts_url(), array(), null );
     wp_enqueue_style( 'wpxpress-style', get_stylesheet_uri(), array(), _S_VERSION );
     wp_enqueue_style( 'milligram', get_template_directory_uri() . '/assets/css/milligram.css', array(), '1.4.1' );
     wp_enqueue_style( 'wpxpress-default-style', get_template_directory_uri() . '/assets/css/default.css', array(), _S_VERSION );
@@ -108,6 +135,7 @@ function wpxpress_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'wpxpress_scripts' );
+
 
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
