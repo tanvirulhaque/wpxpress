@@ -7,6 +7,9 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! function_exists( 'wpxpress_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.

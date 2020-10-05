@@ -7,6 +7,9 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }

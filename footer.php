@@ -9,7 +9,10 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
+
 	<?php if ( is_active_sidebar('footer-widgets') ) { ?>
 	<section class="site-footer-widget-area">
 		<div class="container">

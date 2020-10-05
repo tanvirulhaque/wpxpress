@@ -7,6 +7,9 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 if ( ! defined( '_S_VERSION' ) ) {
     define( '_S_VERSION', '1.0.0' );
 }

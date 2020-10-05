@@ -7,6 +7,8 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
