@@ -17,6 +17,10 @@ defined( 'ABSPATH' ) || exit;
 	<section class="site-footer-widget-area">
 		<div class="container">
 			<div class="row">
+				<div class="colum column-50">
+					<h4>wpXpress</h4>
+					<p>Test to make sure that the editor <br> and the front match.</p>
+				</div>
 				<?php dynamic_sidebar('footer-widgets'); ?>
 			</div>
 		</div>

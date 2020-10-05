@@ -11,9 +11,25 @@
 }
 
 /* Site Footer Style */
+.site-footer-widget-area {
+    padding: 80px 0 40px;
+}
+
+.site-footer-widget-area .colum { width: 100%; }
+
+.site-footer-widget-area .widget_meta ul {
+    list-style: none;
+    font-size: 90%;
+    margin-bottom: 0;
+}
+
+.site-footer-widget-area .widget_meta ul li a {
+    color: #000;
+}
+
 .site-info {
     color: rgba(0,0,0,.5);
-    margin: 2rem 0;
+    margin: 3rem 0;
     font-size: 15px;
     text-align: center;
 }
