@@ -504,7 +504,22 @@ textarea:focus {
 	opacity: 0;
     visibility: hidden;
     transition: .3s;
-	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-navigation ul li ul:before {
+    position: absolute;
+	content: "";
+	width: 0; 
+	height: 0; 
+    top: -7px;
+    left: 15%;
+    z-index: 999;
+    pointer-events: none;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #fff;
 }
 
 .main-navigation ul li ul li {
