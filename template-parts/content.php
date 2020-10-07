@@ -12,8 +12,12 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header text-center">
 		<?php
+		if ( 'post' === get_post_type() ) {
+			wpxpress_posted_in();
+		}
+
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
@@ -26,6 +30,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php
 				wpxpress_posted_by();
 				wpxpress_posted_on();
+				wpxpress_post_reading_time();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

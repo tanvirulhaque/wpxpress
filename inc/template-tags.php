@@ -10,6 +10,21 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+if ( ! function_exists( 'wpxpress_posted_in' ) ) {
+	/**
+	 * Prints HTML with meta information for categories.
+	 */
+	function wpxpress_posted_in() {
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'wpxpress' ) );
+			if ( $categories_list ) {
+				echo '<span class="post-category">' . $categories_list . '</span>';
+			}
+		}
+	}
+}
+
 if ( ! function_exists( 'wpxpress_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -47,7 +62,7 @@ if ( ! function_exists( 'wpxpress_posted_by' ) ) :
 		$last_name     = get_user_meta( $author_id, 'last_name', true );
 		$byline        = '<span class="author vcard"><a href="' . $author_link . '" class="author_avatar">' . $author_avatar . '</a> <a class="url fn n" href="' . $author_link . '">' . esc_html( $first_name .' '. $last_name ) . '</a></span>';
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="byline"> ' . $byline . '</span><span class="sep">|</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -56,15 +71,8 @@ if ( ! function_exists( 'wpxpress_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function wpxpress_entry_footer() {
-		// Hide category and tag text for pages.
+		// Hide tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'wpxpress' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wpxpress' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'wpxpress' ) );
 			if ( $tags_list ) {
@@ -151,6 +159,20 @@ if ( ! function_exists( 'wpxpress_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'wpxpress_post_reading_time' ) ) {
+	/**
+	 * Displays post reading estimated time
+	 */
+	function wpxpress_post_reading_time() {
+	    $words = str_word_count( strip_tags( get_the_content() ) );
+	    $minutes = ceil( $words / 250 );
+
+	    $estimated_time = $minutes . ' min' . ( $minutes == 1 ? '' : 's' ) .' read';
+
+	    echo '<span class="sep">|</span><span class="read_time"> ' . $estimated_time . '</span>';
+	}
+}
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**
