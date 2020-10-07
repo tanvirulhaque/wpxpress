@@ -24,8 +24,8 @@ defined( 'ABSPATH' ) || exit;
 			?>
 			<div class="entry-meta">
 				<?php
-				wpxpress_posted_on();
 				wpxpress_posted_by();
+				wpxpress_posted_on();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

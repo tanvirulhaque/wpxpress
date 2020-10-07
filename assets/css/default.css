@@ -5,9 +5,30 @@
 }
 
 .site-branding a {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 700;
     line-height: 1.2;
+	color: #303030;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+/* Entry Meta Style */
+.entry-meta {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.byline .author {
+	display: inline-flex;
+	align-items: center;
+}
+.byline .author .author_avatar {
+	margin-right: 10px;
+}
+.byline .author .author_avatar img {
+	border-radius: 50%;
 }
 
 /* Site Footer Style */
@@ -24,7 +45,11 @@
 }
 
 .site-footer-widget-area .widget_meta ul li a {
-    color: #000;
+    color: #303030;
+}
+
+.site-footer-widget-area .widget_meta ul li a:hover {
+	color: #0052CC;
 }
 
 .site-info {
