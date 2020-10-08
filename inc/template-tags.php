@@ -57,7 +57,7 @@ if ( ! function_exists( 'wpxpress_posted_by' ) ) :
 	function wpxpress_posted_by() {
 		$author_id     = get_the_author_meta( 'ID' );
 		$author_link   = esc_url( get_author_posts_url( $author_id ) );
-		$author_avatar = get_avatar( $author_id, '35' );
+		$author_avatar = get_avatar( $author_id, '30' );
 		$first_name    = get_user_meta( $author_id, 'first_name', true );
 		$last_name     = get_user_meta( $author_id, 'last_name', true );
 		$byline        = '<span class="author vcard"><a href="' . $author_link . '" class="author_avatar">' . $author_avatar . '</a> <a class="url fn n" href="' . $author_link . '">' . esc_html( $first_name .' '. $last_name ) . '</a></span>';
