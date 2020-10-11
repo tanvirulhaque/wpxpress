@@ -129,10 +129,11 @@ function wpxpress_google_fonts_url() {
 function wpxpress_scripts() {
 	wp_enqueue_style( 'google-fonts', wpxpress_google_fonts_url(), array(), null );
     wp_enqueue_style( 'wpxpress-style', get_stylesheet_uri(), array(), _S_VERSION );
+    wp_enqueue_style( 'et-line-font', get_template_directory_uri() . '/assets/fonts/et-line.css', array(), '1.0.0' );
     wp_enqueue_style( 'milligram', get_template_directory_uri() . '/assets/css/milligram.css', array(), '1.4.1' );
     wp_enqueue_style( 'wpxpress-default-style', get_template_directory_uri() . '/assets/css/default.css', array(), _S_VERSION );
 
-    wp_enqueue_script( 'wpxpress-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'wpxpress-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), _S_VERSION, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
