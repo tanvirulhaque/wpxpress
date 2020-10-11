@@ -18,9 +18,9 @@ html {
 }
 
 body {
-  font-size: 1.6em;
+  font-size: 1.7em;
   letter-spacing: .01em;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 blockquote {
@@ -342,6 +342,10 @@ input[type='radio'] {
   margin-left: 10%;
 }
 
+.row .column.column-offset-15 {
+  margin-left: 15%;
+}
+
 .row .column.column-offset-20 {
   margin-left: 20%;
 }
@@ -420,6 +424,11 @@ input[type='radio'] {
 .row .column.column-66, .row .column.column-67 {
   flex: 0 0 66.6666%;
   max-width: 66.6666%;
+}
+
+.row .column.column-70 {
+  flex: 0 0 75%;
+  max-width: 75%;
 }
 
 .row .column.column-75 {

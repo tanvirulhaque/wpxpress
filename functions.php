@@ -63,7 +63,7 @@ add_action( 'after_setup_theme', 'wpxpress_setup' );
  * @global int $content_width
  */
 function wpxpress_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'wpxpress_content_width', 640 );
+    $GLOBALS['content_width'] = apply_filters( 'wpxpress_content_width', 825 );
 }
 
 add_action( 'after_setup_theme', 'wpxpress_content_width', 0 );

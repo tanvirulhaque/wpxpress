@@ -506,9 +506,10 @@ textarea:focus {
 }
 
 .main-navigation ul li ul {
-	width: 200px;
-	float: left;
 	position: absolute;
+	width: 200px;
+	background: #fff;
+	float: left;
 	padding: 10px;
 	top: 130%;
 	left: 0;
@@ -624,7 +625,7 @@ textarea:focus {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 2em 0 0;
 }
 
 .page-links {

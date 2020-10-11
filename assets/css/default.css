@@ -13,12 +13,23 @@
 }
 
 /* Entry Meta Style */
-.entry-header .entry-title {
-	margin-bottom: 10px;
+.entry-header {
+	padding: 80px 0 0;
 }
+
+.entry-header .post-thumbnail {
+	margin-top: 40px;
+	display: block;
+}
+
+.entry-header .entry-title {
+	font-size: 44px;
+	/*margin-bottom: 15px;*/
+}
+
 .entry-header .post-category {
 	font-weight: 700;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -28,9 +39,9 @@
 .entry-meta {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	/*justify-content: center;*/
 	flex-wrap: wrap;
-	font-size: 90%;
+	font-size: 85%;
 }
 
 .byline .author {
@@ -49,7 +60,7 @@
 }
 
 .entry-meta .sep {
-	font-size: 80%;
+	/*font-size: 80%;*/
 	color: #bcbcbc;
 	padding: 0 12px;
 }

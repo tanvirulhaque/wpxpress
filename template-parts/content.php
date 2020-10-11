@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header text-center">
+	<header class="entry-header">
 		<?php
 		if ( 'post' === get_post_type() ) {
 			wpxpress_posted_in();
@@ -34,9 +34,10 @@ defined( 'ABSPATH' ) || exit;
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
 
-	<?php wpxpress_post_thumbnail(); ?>
+		<?php wpxpress_post_thumbnail(); ?>
+
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
