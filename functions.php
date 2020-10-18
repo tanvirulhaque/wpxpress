@@ -143,46 +143,10 @@ function wpxpress_scripts() {
 add_action( 'wp_enqueue_scripts', 'wpxpress_scripts' );
 
 
-/**
- * Add a pingback url auto-discovery header for single posts of any post type.
- */
-if ( ! function_exists( 'wpxpress_pingback' ) ) {
-    function wpxpress_pingback() {
-        if ( is_singular() && pings_open() ) {
-            echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">' . "\n";
-        }
-    }
-}
-add_action( 'wp_head', 'wpxpress_pingback' );
-
-
-/**
- * Add mobile-web-app meta.
- */
-if ( ! function_exists( 'wpxpress_mobile_web_app_meta' ) ) {
-    function wpxpress_mobile_web_app_meta() {
-        echo '<meta name="mobile-web-app-capable" content="yes">' . "\n";
-        echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
-        echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
-    }
-}
-add_action( 'wp_head', 'wpxpress_mobile_web_app_meta' );
-
-
-/**
- * Remove Taxonomy Name From Archive Title
- */
-add_filter( 'get_the_archive_title', function ( $title ) {
-    $title_parts = explode( ':', $title );
-    if ( ! empty( $title_parts[1] ) ) {
-        return $title_parts[1];
-    }
-
-    return $title_parts[0];
-}, 10, 1 );
-
-
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/extra-functions.php';
 require get_template_directory() . '/inc/customizer.php';
+
+
 
