@@ -7,6 +7,24 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+if ( ! function_exists( 'wpxpress_posted_in' ) ) {
+	/**
+	 * Prints HTML with meta information for categories.
+	 */
+	function wpxpress_posted_in() {
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'wpxpress' ) );
+			if ( $categories_list ) {
+				echo '<span class="post-category">' . $categories_list . '</span>';
+			}
+		}
+	}
+}
+
 if ( ! function_exists( 'wpxpress_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -25,11 +43,7 @@ if ( ! function_exists( 'wpxpress_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'wpxpress' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -41,14 +55,14 @@ if ( ! function_exists( 'wpxpress_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function wpxpress_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'wpxpress' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
+		$author_id     = get_the_author_meta( 'ID' );
+		$author_link   = esc_url( get_author_posts_url( $author_id ) );
+		$author_avatar = get_avatar( $author_id, '30' );
+		$first_name    = get_user_meta( $author_id, 'first_name', true );
+		$last_name     = get_user_meta( $author_id, 'last_name', true );
+		$byline        = '<span class="author vcard"><a href="' . $author_link . '" class="author_avatar">' . $author_avatar . '</a> <a class="url fn n" href="' . $author_link . '">' . esc_html( $first_name .' '. $last_name ) . '</a></span>';
 
-		echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-
+		echo '<span class="byline"> ' . $byline . '</span><span class="sep">|</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 endif;
 
@@ -57,15 +71,8 @@ if ( ! function_exists( 'wpxpress_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function wpxpress_entry_footer() {
-		// Hide category and tag text for pages.
+		// Hide tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'wpxpress' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'wpxpress' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
-
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'wpxpress' ) );
 			if ( $tags_list ) {
@@ -79,7 +86,7 @@ if ( ! function_exists( 'wpxpress_entry_footer' ) ) :
 			comments_popup_link(
 				sprintf(
 					wp_kses(
-						/* translators: %s: post title */
+					/* translators: %s: post title */
 						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'wpxpress' ),
 						array(
 							'span' => array(
@@ -96,7 +103,7 @@ if ( ! function_exists( 'wpxpress_entry_footer' ) ) :
 		edit_post_link(
 			sprintf(
 				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
+				/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Edit <span class="screen-reader-text">%s</span>', 'wpxpress' ),
 					array(
 						'span' => array(
@@ -135,23 +142,37 @@ if ( ! function_exists( 'wpxpress_post_thumbnail' ) ) :
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 				<?php
-					the_post_thumbnail(
-						'post-thumbnail',
-						array(
-							'alt' => the_title_attribute(
-								array(
-									'echo' => false,
-								)
-							),
-						)
-					);
+				the_post_thumbnail(
+					'post-thumbnail',
+					array(
+						'alt' => the_title_attribute(
+							array(
+								'echo' => false,
+							)
+						),
+					)
+				);
 				?>
 			</a>
 
-			<?php
+		<?php
 		endif; // End is_singular().
 	}
 endif;
+
+if ( ! function_exists( 'wpxpress_post_reading_time' ) ) {
+	/**
+	 * Displays post reading estimated time
+	 */
+	function wpxpress_post_reading_time() {
+	    $words = str_word_count( strip_tags( get_the_content() ) );
+	    $minutes = ceil( $words / 250 );
+
+	    $estimated_time = $minutes . ' min' . ( $minutes == 1 ? '' : 's' ) .' read';
+
+	    echo '<span class="sep">|</span><span class="read_time"> ' . $estimated_time . '</span>';
+	}
+}
 
 if ( ! function_exists( 'wp_body_open' ) ) :
 	/**

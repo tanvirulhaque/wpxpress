@@ -5,6 +5,9 @@
  * @package wpXpress
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -35,3 +38,16 @@ function wpxpress_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'wpxpress_pingback_header' );
+
+
+/**
+ * Add mobile-web-app meta.
+ */
+if ( ! function_exists( 'wpxpress_mobile_web_app_meta' ) ) {
+    function wpxpress_mobile_web_app_meta() {
+        echo '<meta name="mobile-web-app-capable" content="yes">' . "\n";
+        echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
+        echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr( get_bloginfo( 'name' ) ) . ' - ' . esc_attr( get_bloginfo( 'description' ) ) . '">' . "\n";
+    }
+}
+add_action( 'wp_head', 'wpxpress_mobile_web_app_meta' );
