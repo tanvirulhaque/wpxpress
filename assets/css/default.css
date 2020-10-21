@@ -19,7 +19,14 @@
 
 .entry-header .post-thumbnail {
 	margin-top: 40px;
+}
+
+.post-thumbnail {
 	display: block;
+}
+
+.post-thumbnail img {
+	border-radius: 3px;
 }
 
 .entry-header .entry-title {
@@ -71,7 +78,7 @@
 
 .post-sticky-box {
 	position: fixed;
-    top: 100px;
+    top: 50px;
     background: #fff;
     width: 180px;
     padding-right: 20px;
@@ -155,31 +162,57 @@
 }
 
 /* Archive */
+.archive .entry-header,
 .blog .entry-header {
 	padding: 0;
 }
+.archive .entry-header .post-category,
 .blog .entry-header .post-category {
 	font-size: 12px;
-	margin: 0;
 }
+.archive .entry-header .post-category a,
+.blog .entry-header .post-category a {
+	color: #666;
+}
+.archive .entry-header .entry-title,
 .blog .entry-header .entry-title {
-	font-size: 36px;
+	font-size: 30px;
 	margin-bottom: 10px;
 }
+.archive .entry-meta,
 .blog .entry-meta {
 	font-size: 75%;
 }
+.archive .entry-meta .sep,
+.blog .entry-meta .sep {
+	padding: 0 8px;
+}
+.archive .entry-content,
 .blog .entry-content {
 	margin: 20px 0;
-	font-size: 95%;
+	font-size: 90%;
 }
+.archive .entry-content p,
 .blog .entry-content p {
 	margin-bottom: 15px;
 }
+.archive .wpxpress-read-more-link,
 .blog .wpxpress-read-more-link {
-	display: inline-block;
-	font-size: 16px;
+	display: inline-block;    
+	font-size: 14px;
+    font-weight: 700;
 }
+.archive .wpxpress-read-more-link i,
 .blog .wpxpress-read-more-link i {
 	margin-left: 5px;
+}
+.archive article .column:last-child,
+.blog article .column:last-child {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.archive article.has-post-thumbnail .post-details,
+.blog article.has-post-thumbnail .post-details {
+	padding-left: 15px;
 }

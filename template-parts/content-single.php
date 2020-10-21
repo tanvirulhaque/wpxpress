@@ -66,6 +66,6 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 
 	<footer class="entry-footer">
-		<?php wpxpress_entry_footer(); ?>
+		<!-- <?php wpxpress_entry_footer(); ?> -->
 	</footer>
 </article>

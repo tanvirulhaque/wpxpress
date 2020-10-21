@@ -34,7 +34,7 @@ add_filter( 'body_class', 'wpxpress_body_classes' );
  */
 function wpxpress_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . '\n', esc_url( get_bloginfo( 'pingback_url' ) ) );
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'wpxpress_pingback_header' );

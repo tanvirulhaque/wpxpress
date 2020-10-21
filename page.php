@@ -20,7 +20,7 @@ get_header();
 	<main id="primary" class="site-main">
 		<div class="container">
 			<div class="row">
-				<div class="column">
+				<div class="column column-80 column-offset-10">
 					<?php
 					while ( have_posts() ) :
 						the_post();
