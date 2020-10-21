@@ -103,7 +103,7 @@
 .sticky-social-share ul {list-style: none;}
 
 .article-sticky-navigation ul li {
-     margin-bottom: 8px; 
+     margin-bottom: 8px;
 }
 
 .sticky-navigation ul li a {
@@ -152,4 +152,34 @@
 }
 .site-info p {
 	margin-bottom: 0;
+}
+
+/* Archive */
+.blog .entry-header {
+	padding: 0;
+}
+.blog .entry-header .post-category {
+	font-size: 12px;
+	margin: 0;
+}
+.blog .entry-header .entry-title {
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+.blog .entry-meta {
+	font-size: 75%;
+}
+.blog .entry-content {
+	margin: 20px 0;
+	font-size: 95%;
+}
+.blog .entry-content p {
+	margin-bottom: 15px;
+}
+.blog .wpxpress-read-more-link {
+	display: inline-block;
+	font-size: 16px;
+}
+.blog .wpxpress-read-more-link i {
+	margin-left: 5px;
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
@@ -26,12 +26,12 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 if ( ! function_exists( 'wpxpress_custom_excerpt_more' ) ) {
     function wpxpress_custom_excerpt_more( $more ) {
         if ( ! is_admin() ) {
-            $more = '... <p><a class="btn btn-default themeplate-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'wpxpress' ) . '</a></p>';
+            $more = '... <p><a class="wpxpress-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'wpxpress' ) . ' <i class="arrow_right"></i></a></p>';
         }
 
         return $more;
     }
-    
+
     add_filter( 'excerpt_more', 'wpxpress_custom_excerpt_more' );
 }
 
