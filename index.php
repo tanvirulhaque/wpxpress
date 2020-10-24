@@ -22,17 +22,14 @@ get_header();
 		<div class="container">
 			<div class="row">
 				<div class="column column-80 column-offset-10">
-					<?php
-					if ( have_posts() ) {
 
-						if ( is_home() && ! is_front_page() ) {
-							?>
-							<header>
-								<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-							</header>
-							<?php
-						}
+					<?php if ( have_posts() ) { ?>
 
+						<header class="page-header-area text-center">
+							<h1 class="page-title">Blog</h1>
+						</header>
+
+						<?php
 						while ( have_posts() ) {
 							the_post();
 
@@ -48,6 +45,7 @@ get_header();
 
 					}
 					?>
+
 				</div>
 			</div>
 		</div>
