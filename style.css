@@ -633,6 +633,28 @@ textarea:focus {
 	margin: 0 0 1.5em;
 }
 
+/* Archive Pagination */
+.navigation.pagination {
+    display: block;
+    text-align: center;
+}
+.navigation.pagination .nav-links .page-numbers {
+    font-size: 14px;
+    background: #ccc;
+    display: inline-block;
+    padding: 8px 12px;
+    line-height: 14px;
+    border-radius: 3px;
+    color: #303030;
+}
+.navigation.pagination .nav-links .page-numbers.current {
+    color: #fff;
+    background: #0052CC;
+}
+.navigation.pagination .nav-links .page-numbers.dots {
+    background: transparent;
+}
+
 /* Comments */
 .comment-content a {
 	word-wrap: break-word;
