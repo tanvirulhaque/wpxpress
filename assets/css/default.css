@@ -27,6 +27,7 @@
 
 .post-thumbnail img {
 	border-radius: 3px;
+	display: block;
 }
 
 .entry-header .entry-title {
@@ -188,10 +189,15 @@
 .search .entry-meta {
 	font-size: 75%;
 }
+.archive .byline .author .author_avatar,
+.blog .byline .author .author_avatar,
+.search .byline .author .author_avatar {
+	margin-right: 8px;
+}
 .archive .entry-meta .sep,
 .blog .entry-meta .sep,
 .search .entry-meta .sep {
-	padding: 0 8px;
+	padding: 0 5px;
 }
 .archive .entry-content,
 .blog .entry-content,
@@ -207,7 +213,7 @@
 .archive .wpxpress-read-more-link,
 .blog .wpxpress-read-more-link,
 .search .wpxpress-read-more-link {
-	display: inline-block;    
+	display: inline-block;
 	font-size: 14px;
     font-weight: 700;
 }
