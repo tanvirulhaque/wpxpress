@@ -12,6 +12,14 @@
 	font-family: 'Titillium Web', sans-serif;
 }
 
+.page-header {
+    padding: 70px 0 100px;
+}
+
+.page-header .page-title {
+    font-size: 38px;
+}
+
 /* Entry Meta Style */
 .entry-header {
 	padding: 80px 0 0;
@@ -209,13 +217,18 @@
 .archive .entry-content,
 .blog .entry-content,
 .search .entry-content {
-	margin: 20px 0;
+	margin-top: 20px;
 	font-size: 90%;
 }
 .archive .entry-content p,
 .blog .entry-content p,
 .search .entry-content p {
 	margin-bottom: 15px;
+}
+.archive p.read-more,
+.blog p.read-more,
+.search p.read-more {
+	margin-bottom: 0;
 }
 .archive .wpxpress-read-more-link,
 .blog .wpxpress-read-more-link,

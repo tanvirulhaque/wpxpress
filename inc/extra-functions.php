@@ -26,7 +26,7 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 if ( ! function_exists( 'wpxpress_custom_excerpt_more' ) ) {
     function wpxpress_custom_excerpt_more( $more ) {
         if ( ! is_admin() ) {
-            $more = '... <p><a class="wpxpress-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'wpxpress' ) . ' <span class="arrow_right"></span></a></p>';
+            $more = '... <p class="read-more"><a class="wpxpress-read-more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Read More', 'wpxpress' ) . ' <span class="arrow_right"></span></a></p>';
         }
 
         return $more;

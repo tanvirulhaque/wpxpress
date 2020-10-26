@@ -23,7 +23,7 @@ get_header();
 			<div class="row">
 				<div class="column column-80 column-offset-10">
 
-					<header class="page-header-area text-center">
+					<header class="page-header text-center">
 						<h1 class="page-title">Blog</h1>
 					</header>
 
