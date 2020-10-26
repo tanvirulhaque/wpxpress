@@ -45,6 +45,8 @@ get_header();
 					?>
 				</div>
 			</div>
+
+			<?php get_template_part( 'template-parts/subscribe-newsletter' ) ?>
 		</div>
 	</main>
 

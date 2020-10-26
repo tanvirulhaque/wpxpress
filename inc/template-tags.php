@@ -170,7 +170,7 @@ if ( ! function_exists( 'wpxpress_post_reading_time' ) ) {
 
 	    $estimated_time = $minutes . ' min' . ( $minutes == 1 ? '' : 's' ) .' read';
 
-	    echo '<span class="sep">|</span><span class="read_time"> ' . $estimated_time . '</span>';
+	    echo '<span class="sep">|</span><span class="read-time"> ' . $estimated_time . '</span>';
 	}
 }
 
