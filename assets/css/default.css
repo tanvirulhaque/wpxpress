@@ -25,6 +25,10 @@
 	display: block;
 }
 
+.post-thumbnail figure {
+	margin: 0;
+}
+
 .post-thumbnail img {
 	border-radius: 3px;
 	display: block;

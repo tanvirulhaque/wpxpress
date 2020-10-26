@@ -119,7 +119,7 @@ if ( ! function_exists( 'wpxpress_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'wpxpress_post_thumbnail' ) ) :
+if ( ! function_exists( 'wpxpress_post_thumbnail' ) ) {
 	/**
 	 * Displays an optional post thumbnail.
 	 *
@@ -131,34 +131,35 @@ if ( ! function_exists( 'wpxpress_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( is_singular() ) :
-			?>
+		if ( is_singular() ) { ?>
 
-			<div class="post-thumbnail">
+			<figure class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			</figure>
 
-		<?php else : ?>
+		<?php } else { ?>
 
 			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-				<?php
-				the_post_thumbnail(
-					'post-thumbnail',
-					array(
-						'alt' => the_title_attribute(
-							array(
-								'echo' => false,
-							)
-						),
-					)
-				);
-				?>
+				<figure>
+					<?php
+					the_post_thumbnail(
+						'post-thumbnail',
+						array(
+							'alt' => the_title_attribute(
+								array(
+									'echo' => false,
+								)
+							),
+						)
+					);
+					?>
+				</figure>
 			</a>
 
 		<?php
-		endif; // End is_singular().
+		}
 	}
-endif;
+}
 
 if ( ! function_exists( 'wpxpress_post_reading_time' ) ) {
 	/**
