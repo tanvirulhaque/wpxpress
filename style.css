@@ -281,6 +281,7 @@ a:focus,
 a:visited,
 a:active {
 	color: #0052CC;
+	outline: none;
 }
 
 a:hover,

@@ -14,9 +14,7 @@ defined( 'ABSPATH' ) || exit;
 <section class="no-results not-found text-center">
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wpxpress' ); ?></h1>
-	</header>
 
-	<div class="page-content">
 		<?php if ( is_search() ) { ?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wpxpress' ); ?></p>
@@ -31,5 +29,5 @@ defined( 'ABSPATH' ) || exit;
 
 		}
 		?>
-	</div>
+	</header>
 </section>

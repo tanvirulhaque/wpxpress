@@ -17,17 +17,17 @@ get_header();
 		<section class="error-404 not-found">
 			<div class="container">
 				<div class="row">
-					<div class="column column-80 column-offset-10 text-center">
+					<div class="column column-50 column-offset-25 text-center">
 
 						<header class="page-header">
+							<span class="error-404-alert">404!</span>
+
 							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wpxpress' ); ?></h1>
+
+							<p>It looks like nothing was found at this location. You may <a href="<?php echo home_url(); ?>">go back to home</a> or try searching for something else.</p>
+
+							<?php get_search_form(); ?>
 						</header>
-
-						<div class="page-content">
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'wpxpress' ); ?></p>
-
-								<?php get_search_form(); ?>
-						</div>
 						
 					</div>
 				</div>
