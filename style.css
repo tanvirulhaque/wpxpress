@@ -648,7 +648,8 @@ textarea:focus {
     border-radius: 3px;
     color: #303030;
 }
-.navigation.pagination .nav-links .page-numbers.current {
+.navigation.pagination .nav-links .page-numbers.current, 
+.navigation.pagination .nav-links .page-numbers:not(.dots):hover {
     color: #fff;
     background: #0052CC;
 }

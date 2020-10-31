@@ -24,7 +24,7 @@ get_header();
 				<div class="column column-80 column-offset-10">
 
 					<header class="page-header text-center">
-						<h1 class="page-title">Blog</h1>
+						<h1 class="page-title"><?php esc_html_e( 'Articles', 'wpxpress' ); ?></h1>
 					</header>
 
 					<?php if ( have_posts() ) { 

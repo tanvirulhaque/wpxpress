@@ -13,11 +13,11 @@
 }
 
 .page-header {
-    padding: 80px 0;
+    padding: 80px 0 100px;
 }
 
 .page-header .page-title {
-    font-size: 38px;
+    font-size: 44px;
     margin-bottom: 10px;
 }
 
@@ -244,6 +244,7 @@
 .blog p.read-more,
 .search p.read-more {
 	margin-bottom: 0;
+    margin-top: 20px;
 }
 .archive .wpxpress-read-more-link,
 .blog .wpxpress-read-more-link,
@@ -251,11 +252,18 @@
 	display: inline-block;
 	font-size: 14px;
     font-weight: 700;
+    border-bottom: 1px solid;
+    opacity: .7;
 }
 .archive .wpxpress-read-more-link i,
 .blog .wpxpress-read-more-link i,
 .search .wpxpress-read-more-link i {
 	margin-left: 5px;
+}
+.archive article:hover .wpxpress-read-more-link,
+.blog article:hover .wpxpress-read-more-link,
+.search article:hover .wpxpress-read-more-link {
+    opacity: 1;
 }
 .archive article .column:last-child,
 .blog article .column:last-child,
@@ -291,6 +299,10 @@
     margin-bottom: 15px;
 }
 
+.error-404 .page-header .page-title {
+    margin-bottom: 15px;
+    font-size: 40px;
+}
 
 /* Site search form */
 .search-form label {
@@ -305,12 +317,22 @@
     margin-bottom: 20px;
 }
 
+.search-form input.search-field:focus {
+    border-color: #0052cc;
+}
+
 .search-form input.search-submit {
     background: #303030;
     border-color: #303030;
     height: 45px;
     font-size: 14px;
     width: 100%;
+    transition: .35s all;
+}
+
+.search-form input.search-submit:hover {
+    background: #0052cc;
+    border-color: #0052cc;
 }
 
 /* Site Footer Subscribe */
@@ -354,4 +376,14 @@
     border-color: #303030;
     height: 45px;
     font-size: 14px;
+    transition: .35s all;
+}
+
+.site-footer-subscribe form input[type=text]:focus {
+    border-color: #0052cc;
+}
+
+.site-footer-subscribe form input[type="submit"]:hover {
+    background: #0052cc;
+    border-color: #0052cc;
 }
