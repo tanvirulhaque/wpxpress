@@ -15,9 +15,11 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="container">
-			<div class="row">
-				<div class="column column-80 column-offset-10">
-					<?php if ( have_posts() ) { ?>
+
+			<?php if ( have_posts() ) { ?>
+
+				<div class="row">
+					<div class="column column-80 column-offset-10">
 
 						<header class="page-header text-center">
 							<?php
@@ -35,17 +37,22 @@ get_header();
 						}
 
 						the_posts_pagination();
+						?>
 
-					} else {
-
-						get_template_part( 'template-parts/content', 'none' );
-
-					}
-					?>
+					</div>
 				</div>
-			</div>
 
-			<?php get_template_part( 'template-parts/subscribe-newsletter' ) ?>
+				<?php get_template_part( 'template-parts/subscribe-newsletter' ) ?>
+
+			<?php } else { ?>
+
+				<div class="row">
+					<div class="column column-50 column-offset-25 text-center">
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					</div>
+				</div>
+
+			<?php } ?>
 			
 		</div>
 	</main>

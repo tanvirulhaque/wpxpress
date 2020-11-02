@@ -17,6 +17,7 @@ get_header();
 		<div class="container">
 			
 			<?php if ( have_posts() ) { ?>
+				
 				<div class="row">
 					<div class="column column-80 column-offset-10">
 
