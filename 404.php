@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * The template for displaying 404 pages (not found)
  *
@@ -20,11 +20,11 @@ get_header();
 					<div class="column column-50 column-offset-25 text-center">
 
 						<header class="page-header">
-							<span class="error-404-alert">404!</span>
+							<span class="error-404-alert"><?php esc_html_e( '404!', 'wpxpress' ); ?></span>
 
 							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wpxpress' ); ?></h1>
 
-							<p>It looks like nothing was found at this location. You may <a href="<?php echo home_url(); ?>">go back to home</a> or try searching for something else.</p>
+							<?php printf("<p>It looks like nothing was found at this location. You may <a href='%s'>go back to home</a> or try searching for something else.</p>", esc_url(home_url())); ?>
 
 							<?php get_search_form(); ?>
 						</header>

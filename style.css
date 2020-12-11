@@ -615,7 +615,8 @@ textarea:focus {
 }
 
 .post,
-.page {
+.page,
+.type-download {
 	margin: 0 0 2em;
 }
 

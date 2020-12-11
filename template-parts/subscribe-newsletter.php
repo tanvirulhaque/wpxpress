@@ -2,8 +2,8 @@
 	<div class="column">
 		<footer class="site-footer-subscribe text-center">
 			<div class="subscribe-header">
-				<h3 class="subscribe-title">Subscribe to Our Newsletter</h3>
-				<p>Receive latest news, updates and many other news every week.</p>
+				<h3 class="subscribe-title"><?php esc_html_e( 'Subscribe to Our Newsletter', 'wpxpress' ); ?></h3>
+				<p><?php esc_html_e( 'Receive latest news, updates and many other news every week.' ); ?></p>
 			</div>
 
 			<form action="#">
