@@ -47,7 +47,7 @@ defined( 'ABSPATH' ) || exit;
                                 'theme_location' => 'main-menu',
                                 'menu_id'        => 'main-menu',
                             )
-                        );
+                        );wp_die('works');
                         ?>
                     </nav>
                 </div>
