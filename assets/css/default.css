@@ -155,19 +155,21 @@
     padding: 80px 0 40px;
 }
 
-.site-footer-widget-area .colum { width: 100%; }
+.site-footer-widget-area .colum { 
+    width: 100%; 
+}
 
-.site-footer-widget-area .widget_meta ul {
+.site-footer-widget-area .widget ul {
     list-style: none;
     font-size: 90%;
     margin-bottom: 0;
 }
 
-.site-footer-widget-area .widget_meta ul li a {
+.site-footer-widget-area .widget ul li a {
     color: #303030;
 }
 
-.site-footer-widget-area .widget_meta ul li a:hover {
+.site-footer-widget-area .widget ul li a:hover {
 	color: #0052CC;
 }
 
