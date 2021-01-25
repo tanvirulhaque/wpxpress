@@ -32,17 +32,7 @@ defined( 'ABSPATH' ) || exit;
 				else :
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif;
-
-				if ( 'post' === get_post_type() ) :
-					?>
-					<div class="entry-meta">
-						<?php
-//						wpxpress_posted_by();
-//						wpxpress_posted_on();
-//						wpxpress_post_reading_time();
-						?>
-					</div>
-				<?php endif; ?>
+				?>
 			</header>
 
 			<div class="entry-content">
