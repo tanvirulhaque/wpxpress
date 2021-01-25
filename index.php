@@ -26,7 +26,7 @@ get_header();
 					<header class="page-header text-center">
 						<div class="row">
 							<div class="column column-60 column-offset-20">
-								<h1 class="page-title"><?php esc_html_e( 'Publication', 'wpxpress' ); ?></h1>
+								<h1 class="page-title"><?php esc_html_e( 'WP Publication', 'wpxpress' ); ?></h1>
 
 								<div class="hero-category-list">
 									<ul>
@@ -37,6 +37,7 @@ get_header();
 										<li><a href="#">Tutorial</a></li>
 										<li><a href="#">News</a></li>
 										<li><a href="#">Development</a></li>
+										<li><a href="#">How To</a></li>
 										<li><a href="#">Marketing</a></li>
 										<li><a href="#">Design</a></li>
 									</ul>

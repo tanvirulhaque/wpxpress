@@ -418,3 +418,8 @@
 	padding: 4px 12px;
 	border-radius: 3px;
 }
+
+.hero-category-list ul li a:hover {
+	background: #0052CC;
+	color: #fff;
+}
