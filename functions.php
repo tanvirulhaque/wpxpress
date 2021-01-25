@@ -11,7 +11,7 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( '_S_VERSION' ) ) {
-    define( '_S_VERSION', '1.0.0' );
+    define( '_S_VERSION', time() );
 }
 
 if ( ! function_exists( 'wpxpress_setup' ) ) {

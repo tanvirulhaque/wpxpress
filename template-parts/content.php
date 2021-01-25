@@ -37,9 +37,9 @@ defined( 'ABSPATH' ) || exit;
 					?>
 					<div class="entry-meta">
 						<?php
-						wpxpress_posted_by();
-						wpxpress_posted_on();
-						wpxpress_post_reading_time();
+//						wpxpress_posted_by();
+//						wpxpress_posted_on();
+//						wpxpress_post_reading_time();
 						?>
 					</div>
 				<?php endif; ?>

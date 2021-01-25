@@ -24,10 +24,35 @@ get_header();
 				<div class="column column-80 column-offset-10">
 
 					<header class="page-header text-center">
-						<h1 class="page-title"><?php esc_html_e( 'Articles', 'wpxpress' ); ?></h1>
+						<div class="row">
+							<div class="column column-60 column-offset-20">
+								<h1 class="page-title"><?php esc_html_e( 'Publication', 'wpxpress' ); ?></h1>
+
+								<div class="hero-category-list">
+									<ul>
+										<li><a href="#">WordPress</a></li>
+										<li><a href="#">Security</a></li>
+										<li><a href="#">WooCommerce</a></li>
+										<li><a href="#">Speed Up</a></li>
+										<li><a href="#">Tutorial</a></li>
+										<li><a href="#">News</a></li>
+										<li><a href="#">Development</a></li>
+										<li><a href="#">Marketing</a></li>
+										<li><a href="#">Design</a></li>
+									</ul>
+								</div>
+
+								<div class="hero-search-area">
+									<form role="search" method="get" action="<?php site_url(); ?>">
+										<input type="text" name="s" id="s" placeholder="Search here...">
+										<input type="hidden" value="post" name="post_type">
+									</form>
+								</div>
+							</div>
+						</div>
 					</header>
 
-					<?php if ( have_posts() ) { 
+					<?php if ( have_posts() ) {
 
 						while ( have_posts() ) {
 							the_post();
@@ -49,7 +74,7 @@ get_header();
 			</div>
 
 			<?php get_template_part( 'template-parts/subscribe-newsletter' ) ?>
-			
+
 		</div>
 	</main>
 
