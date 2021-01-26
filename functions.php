@@ -10,13 +10,15 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+// EDD archive Downloads slug change
+define('EDD_SLUG', 'products');
+
 if ( ! defined( '_S_VERSION' ) ) {
     define( '_S_VERSION', time() );
 }
 
 if ( ! function_exists( 'wpxpress_setup' ) ) {
     function wpxpress_setup() {
-
         add_theme_support( 'automatic-feed-links' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
@@ -36,6 +38,7 @@ if ( ! function_exists( 'wpxpress_setup' ) ) {
                 'script',
             )
         );
+
         add_theme_support(
             'custom-logo',
             array(
@@ -144,6 +147,9 @@ function wpxpress_scripts() {
 add_action( 'wp_enqueue_scripts', 'wpxpress_scripts' );
 
 
+/**
+ * Require theme functions files
+ */
 require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/extra-functions.php';
