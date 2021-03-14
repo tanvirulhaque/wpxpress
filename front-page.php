@@ -52,8 +52,10 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="column column-60">
-						<h2>Our Products</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Alias eligendi eos quia nostrum voluptates.</p>
+						<div class="section-title">
+							<h2>Our Products</h2>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Alias eligendi eos quia nostrum voluptates.</p>
+						</div>
 					</div>
 				</div>
 
@@ -63,7 +65,7 @@ get_header();
 						<div class="product-item">
 
 							<div class="product-item__image">
-								<img src="https://www.joomshaper.com/images/2020/01/17/startuplanding-thumb.jpg" alt="">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/product-dummy-img.jpg" alt="">
 
 								<div class="product-item__image-overlay text-center">
 									<a href="#" class="button button-outline">Preview</a>
@@ -72,58 +74,14 @@ get_header();
 							</div>
 
 							<div class="product-item__content">
+
+								<span class="product-item__catagory">Theme</span>
 								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column column-33">
-						<div class="product-item">
-							<div class="product-item__image"></div>
-							<div class="product-item__content">
-								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column column-33">
-						<div class="product-item">
-							<div class="product-item__image"></div>
-							<div class="product-item__content">
-								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column column-33">
-						<div class="product-item">
-							<div class="product-item__image"></div>
-							<div class="product-item__content">
-								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column column-33">
-						<div class="product-item">
-							<div class="product-item__image"></div>
-							<div class="product-item__content">
-								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="column column-33">
-						<div class="product-item">
-							<div class="product-item__image"></div>
-							<div class="product-item__content">
-								<h3 class="product-item__title">Blacki - WordPress Business Theme</h3>
-								<a href="#">Buy Now</a>
+
+								<div class="product-item__content-meta clearfix">
+									<span class="product-item_price float-left">$19 - $99</span>
+									<a href="#" class="float-right">Buy Now</a>
+								</div>
 							</div>
 						</div>
 					</div>
